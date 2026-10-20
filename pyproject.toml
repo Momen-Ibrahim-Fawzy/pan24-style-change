@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "style-change"
+version = "1.0.0"
+description = "PAN 2024 multi-author writing style analysis: Sentence-Transformers, CoSENT (CL-MAWSA) and LLM prompting"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [{ name = "Momen Ibrahim Fawzy" }]
+dependencies = ["numpy", "pandas", "pyyaml", "tqdm"]
+
+[project.optional-dependencies]
+sbert = ["torch>=1.13", "sentence-transformers>=2.2"]
+cosent = ["torch>=1.13", "transformers>=4.30"]
+llm = ["openai>=1.0"]
+plot = ["matplotlib"]
+dev = ["pytest", "torch>=1.13"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
