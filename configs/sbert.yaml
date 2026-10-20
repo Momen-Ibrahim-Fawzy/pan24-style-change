@@ -1,0 +1,12 @@
+# Sentence-Transformer fine-tuning (all-MiniLM-L12-v2 / all-mpnet-base-v2)
+model: sentence-transformers/all-mpnet-base-v2
+batch_size: 64
+epochs: 10
+learning_rate: 2.0e-5
+warmup_steps: 0
+margin: 0.5          # ContrastiveLoss margin (cosine distance)
+subsample: 0.7       # each epoch trains on a fresh random 70% of the pairs
+eval_every: 2
+chunk_tokens: 256    # long paragraphs are scored chunk by chunk
+threshold: 0.5       # cosine similarity below this -> style change
+seed: 42
