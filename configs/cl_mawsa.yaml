@@ -1,0 +1,11 @@
+# CL-MAWSA baseline: CoSENT-trained encoder + tanh classifier on frozen [CLS] features
+model: microsoft/deberta-base
+max_length: 256
+encoder_batch_size: 16
+encoder_epochs: 3
+encoder_lr: 2.0e-5
+scale: 20.0              # lambda in the CoSENT loss
+classifier_batch_size: 128
+classifier_epochs: 10
+classifier_lr: 1.0e-3
+seed: 42
